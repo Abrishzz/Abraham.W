@@ -1,0 +1,58 @@
+---
+title: 'My journey of self-improvement through building websites'
+abstract: I originally built this portfolio site in 2022, and since then it's evolved quite a bit. Recently I migrated from Create React App and Next.js to flutter  and made some major upgrades in the process.
+date: '2023-04-21'
+banner: /static/hello-world-banner.jpg
+---
+
+## How it all started
+
+Back in 2022 I needed to update my portfolio site (as designers are wont to do). I thought I'd steer away from current trends and build a site that tapped into the aesthetic of recent sci-fi films like Dune (2021), The Matrix (1999), and Ready Player One (2018). These movies continue the cyberpunk and sci-fi traditions of the 80s and 90s, but bring a modern visual style. I want to recreate some of that futuristic yet retro look to give the website a cool sci-fi vibe. That's where I borrowed few visual motifs like the bold Amharic lettering on the homepage and the text decoding effect as a homage to the Matrix's "Digital rain" effect, which was itself inspired by Ghost in the Shell's opening credits. I was also inspired by an experimental video I generated using the AI video generator Runway.ml to create an "Ethiopian farmer" sequence that I included on my [404 page](/404) . The surreal futuristic style of AI-generated media provided extra ideas for visualizing sci-fi concepts on my portfolio.
+
+![A scene from Ghost in the Shell (1995) with the Major cloaking with thermoptic camouflage; the poster for Akira; The Matrix's digital rain effect](/static/inspiration.png)
+
+## The journey
+
+While obtaining my software engineering degree at Addis Ababa Science and Technology University, I already had some experience building applications with React. However, building this portfolio site gave me a great opportunity to improve my knowledge and skills with React in a practical way.
+
+While overkill for a personal site, the hands-on experience of designing and developing an entire project from scratch helped strengthen my understanding and abilities with React. I've always found the best way to truly improve is by making something real that I intend to use.
+
+The Create React App starter was helpful for getting up and running quickly without configuration overhead. I also enjoyed experimenting with React libraries like Styled Components, Tween.js and React Transition Group to expand my skills with dynamic UX features. Playing with Three.js effects on the homepage allowed me to develop my abilities with 3D graphics in React. Through this portfolio project, I was able to take my existing React skills to a higher level. The hands-on work solidified my proficiency with React.
+
+### Living Laboratory
+This site has served as a fertile testing ground for me to experiment freely. A major transition replaced static mockups with interactively rendered 3D scenes, via models I built for Clay Mockups.
+
+### Prototyping in Production
+By continually refining things here in a live production context, I gain meaningful feedback. What began as a fleshed out portfolio evolved into a fluid lab for hypotheses. Users encounter refined concepts while I continuously expand my toolkit.
+
+### A Platform for Progress
+New technologies and techniques are trial-run here before adoption elsewhere. Frameworks and libraries undergo rigorous real-world stress testing. Insights feed a virtuous cycle of advancing both the site and my skills in lockstep. Visitors partake in an ever-evolving journey alongside me.
+
+![Thumbnail for my Clay Mockups 3D plugin](/static/clay-mockups.png)
+
+## Changing to Next.js
+
+As my site grew, the limitations of Create React App became evident. I was using a messy hack to pre-render pages as static HTML and wanted something more robust for content like articles. I had experimented with prerendering using MDX before but it wasn't production-ready.
+
+- I evaluated several options like Gatsby, Remix and Vite before choosing Next.js as the best fit. Its conventions are a much nicer match compared to CRA. Migrating was seamless - I now let Next.js handle static generation which works like a charm.
+- Styling has been streamlined with plain CSS and PostCSS. No more BEM, just CSS modules to avoid conflicts. Page generation from MDX files is incredibly simple and fast thanks to mdx-bundler integration.
+- Animation duties have been passed to the capable Framer Motion instead of multiple libraries. Three.js continues bringing environments to life, with three-stdlib replacing older modules for better care.
+- Overall the site is now leaner, more extensible and a pleasure to develop for - all thanks to the migration to Next.js! Its conventions align perfectly with my goals for content-rich responsive designs.
+
+## Not all smooth sailing
+
+For the most part, the migration was pretty straight-forward. The way I has structured the site with React Router lent itself well to conforming with Next.js's file-based routing, and I was already using postcss for styling. I did, however, encounter a couple of problems:
+
+### 1. Animating Between Screens
+
+Early on, I ran into conflicts with route transitions in Next.js clearing styles too aggressively. This caused jarring unstyling during page animations. Luckily the community navigation fixes, which I incorporated to smooth things over.
+
+### 2.Maintaining Scroll Position
+
+Closely related to routing, I needed to prevent abrupt scroll resets during page changes. Disabling native and Next.js scrolling restoration did the trick. Accessibility also required focus shifting on anchor links.
+
+## Looking Back and Forward
+
+My aim was empowering others to learn from what they found under the hood. Now clients deliver bespoke experiences without hunting garbled code.
+
+The journey continues as I refine this into a leaner solution. Future iterations will draw on lessons learned the hard way. Development as a collaborative process has kept things engaging from start to now. Excited to see where the site leads next!
