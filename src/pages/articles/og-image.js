@@ -20,10 +20,14 @@ export async function generateOgImage(props) {
     fs.statSync(imagePath);
     return publicPath;
   } catch (error) {
-    // file does not exists, so we create it
+    // file does not exist, so we create it
   }
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox'], // Add this line to include --no-sandbox option
+  });
+
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 630 });
   await page.goto(url, { waitUntil: 'networkidle0' });
